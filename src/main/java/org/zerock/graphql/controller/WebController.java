@@ -40,11 +40,7 @@ public class WebController {
 		String jsonInString = "";
 		
 		 try {
-        	 
-	            HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-	            factory.setConnectTimeout(5000); //타임아웃 설정 5초
-	            factory.setReadTimeout(5000);//타임아웃 설정 5초
-	            RestTemplate restTemplate = new RestTemplate(factory);
+	            RestTemplate restTemplate = new RestTemplate();
 	 
 	            HttpHeaders header = new HttpHeaders();
 	            HttpEntity<?> entity = new HttpEntity<>(header);
@@ -77,11 +73,8 @@ public class WebController {
         String jsonInString = "";
         
         try {
-        	 
-            HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-            factory.setConnectTimeout(5000); //타임아웃 설정 5초
-            factory.setReadTimeout(5000);//타임아웃 설정 5초
-            RestTemplate restTemplate = new RestTemplate(factory);
+           
+            RestTemplate restTemplate = new RestTemplate();
  
             HttpHeaders header = new HttpHeaders();
             HttpEntity<?> entity = new HttpEntity<>(header);
