@@ -112,17 +112,15 @@ public class WebController {
  
             String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
             
-            final String body = "{\r\n" + 
-            		"  kind(kind_code: \"k5\"){\r\n" + 
-            		"    restaurants{\r\n" + 
-            		"      company_code\r\n" + 
-            		"    	member_id\r\n" + 
-            		"    	restaurant_address\r\n" + 
-            		"   	 	restaurant_name\r\n" + 
-            		"    	restaurant_phone\r\n" + 
+            final String body = "restaurant(company_code:\"1k5A\"){\r\n" + 
+            		"    restaurant_name\r\n" + 
+            		"    restaurant_address\r\n" + 
+            		"    restaurant_phone\r\n" + 
+            		"    foods{\r\n" + 
+            		"      food_name\r\n" + 
+            		"      food_price\r\n" + 
             		"    }\r\n" + 
-            		"  }\r\n" + 
-            		"}";
+            		"  }";
       
             //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
             jsonInString = restTemplate.getForObject(url + "/graphql?query={body}", String.class,body);
