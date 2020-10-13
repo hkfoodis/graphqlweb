@@ -49,7 +49,7 @@ public class WebController {
 	            HttpHeaders header = new HttpHeaders();
 	            HttpEntity<?> entity = new HttpEntity<>(header);
 	 
-	            String url = "http://localhost:4000";
+	            String url = "ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
 	      
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
 	            jsonInString = restTemplate.getForObject(url + "/kinds/k5/restaurants", String.class);
@@ -86,7 +86,7 @@ public class WebController {
             HttpHeaders header = new HttpHeaders();
             HttpEntity<?> entity = new HttpEntity<>(header);
  
-            String url = "http://localhost:4000";
+            String url = "ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
             
             final String body = "{\r\n" + 
             		"  kind(kind_code: \"k5\"){\r\n" + 
