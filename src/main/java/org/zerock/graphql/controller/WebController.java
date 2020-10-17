@@ -225,7 +225,6 @@ public class WebController {
             		"    restaurants{\r\n" + 
             		"      company_code\r\n" + 
             		"      member_id\r\n" + 
-            		"      kind_code\r\n" + 
             		"      restaurant_name\r\n" + 
             		"      restaurant_address\r\n" + 
             		"      restaurant_phone\r\n" + 
