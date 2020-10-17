@@ -95,6 +95,68 @@ public class WebController {
 	 
 	        return jsonInString;
 	}
+	@GetMapping("/kinds/k3/restaurants") 
+	public String kindlistk3() {
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		String jsonInString = "";
+		
+		 try {
+	            RestTemplate restTemplate = new RestTemplate();
+	 
+	            HttpHeaders header = new HttpHeaders();
+	            HttpEntity<?> entity = new HttpEntity<>(header);
+	 
+	            String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
+	      
+	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
+	            jsonInString = restTemplate.getForObject(url + "/kinds/k3/restaurants", String.class);
+	 
+	        } catch (HttpClientErrorException | HttpServerErrorException e) {
+	            result.put("statusCode", e.getRawStatusCode());
+	            result.put("body"  , e.getStatusText());
+	            System.out.println("dfdfdfdf");
+	            System.out.println(e.toString());
+	 
+	        } catch (Exception e) {
+	            result.put("statusCode", "999");
+	            result.put("body"  , "excpetion오류");
+	            System.out.println(e.toString());
+	        }
+	 
+	        return jsonInString;
+	}
+	@GetMapping("/kinds/k6/restaurants") 
+	public String kindlistk6() {
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		String jsonInString = "";
+		
+		 try {
+	            RestTemplate restTemplate = new RestTemplate();
+	 
+	            HttpHeaders header = new HttpHeaders();
+	            HttpEntity<?> entity = new HttpEntity<>(header);
+	 
+	            String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
+	      
+	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
+	            jsonInString = restTemplate.getForObject(url + "/kinds/k6/restaurants", String.class);
+	 
+	        } catch (HttpClientErrorException | HttpServerErrorException e) {
+	            result.put("statusCode", e.getRawStatusCode());
+	            result.put("body"  , e.getStatusText());
+	            System.out.println("dfdfdfdf");
+	            System.out.println(e.toString());
+	 
+	        } catch (Exception e) {
+	            result.put("statusCode", "999");
+	            result.put("body"  , "excpetion오류");
+	            System.out.println(e.toString());
+	        }
+	 
+	        return jsonInString;
+	}
 	
 	@GetMapping("/menulist")
 	public String callAPI2() {
@@ -142,7 +204,7 @@ public class WebController {
         return jsonInString;
 	}
 	
-	@GetMapping("/kindlist")
+	@GetMapping("/kindlistk5")
 	public String callAPI() {
 		
 		HashMap<String, Object> result = new HashMap<String, Object>();
@@ -160,12 +222,104 @@ public class WebController {
             
             final String body = "{\r\n" + 
             		"  kind(kind_code: \"k5\"){\r\n" + 
+            		"    kind_code\r\n" + 
             		"    restaurants{\r\n" + 
-            		"      company_code\r\n" + 
-            		"    	member_id\r\n" + 
-            		"    	restaurant_address\r\n" + 
-            		"   	 	restaurant_name\r\n" + 
-            		"    	restaurant_phone\r\n" + 
+            		"      restaurant_name\r\n" + 
+            		"      restaurant_address\r\n" + 
+            		"      restaurant_phone\r\n" + 
+            		"      member_id\r\n" + 
+            		"    }\r\n" + 
+            		"  }\r\n" + 
+            		"}";
+      
+            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
+            jsonInString = restTemplate.getForObject(url + "/graphql?query={body}", String.class,body);
+ 
+        } catch (HttpClientErrorException | HttpServerErrorException e) {
+            result.put("statusCode", e.getRawStatusCode());
+            result.put("body"  , e.getStatusText());
+            System.out.println("dfdfdfdf");
+            System.out.println(e.toString());
+ 
+        } catch (Exception e) {
+            result.put("statusCode", "999");
+            result.put("body"  , "excpetion오류");
+            System.out.println(e.toString());
+        }
+ 
+        return jsonInString;
+	}
+	
+	@GetMapping("/kindlistk6")
+	public String callAPI3() {
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		 
+        String jsonInString = "";
+        
+        try {
+           
+            RestTemplate restTemplate = new RestTemplate();
+ 
+            HttpHeaders header = new HttpHeaders();
+            HttpEntity<?> entity = new HttpEntity<>(header);
+ 
+            String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
+            
+            final String body = "{\r\n" + 
+            		"  kind(kind_code: \"k6\"){\r\n" + 
+            		"    kind_code\r\n" + 
+            		"    restaurants{\r\n" + 
+            		"      restaurant_name\r\n" + 
+            		"      restaurant_address\r\n" + 
+            		"      restaurant_phone\r\n" + 
+            		"      member_id\r\n" + 
+            		"    }\r\n" + 
+            		"  }\r\n" + 
+            		"}";
+      
+            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
+            jsonInString = restTemplate.getForObject(url + "/graphql?query={body}", String.class,body);
+ 
+        } catch (HttpClientErrorException | HttpServerErrorException e) {
+            result.put("statusCode", e.getRawStatusCode());
+            result.put("body"  , e.getStatusText());
+            System.out.println("dfdfdfdf");
+            System.out.println(e.toString());
+ 
+        } catch (Exception e) {
+            result.put("statusCode", "999");
+            result.put("body"  , "excpetion오류");
+            System.out.println(e.toString());
+        }
+ 
+        return jsonInString;
+	}
+	
+	@GetMapping("/kindlistk3")
+	public String callAPI4() {
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		 
+        String jsonInString = "";
+        
+        try {
+           
+            RestTemplate restTemplate = new RestTemplate();
+ 
+            HttpHeaders header = new HttpHeaders();
+            HttpEntity<?> entity = new HttpEntity<>(header);
+ 
+            String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
+            
+            final String body = "{\r\n" + 
+            		"  kind(kind_code: \"k3\"){\r\n" + 
+            		"    kind_code\r\n" + 
+            		"    restaurants{\r\n" + 
+            		"      restaurant_name\r\n" + 
+            		"      restaurant_address\r\n" + 
+            		"      restaurant_phone\r\n" + 
+            		"      member_id\r\n" + 
             		"    }\r\n" + 
             		"  }\r\n" + 
             		"}";
