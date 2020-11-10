@@ -136,7 +136,7 @@ public class WebController {
 	            System.out.println(e.toString());
 	        }
 	 
-	        return jsonInString;
+	        return resultString;
 	}
 	@GetMapping("/kinds/k6/restaurants") 
 	public String kindlistk6() {
@@ -173,7 +173,7 @@ public class WebController {
 	            System.out.println(e.toString());
 	        }
 	 
-	        return jsonInString;
+	        return resultString;
 	}
 	
 	@GetMapping("/menulist")
