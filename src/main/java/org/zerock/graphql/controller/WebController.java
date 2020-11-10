@@ -69,6 +69,8 @@ public class WebController {
 		
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		String jsonInString = "";
+		String jsonInString1 = "";
+		String resultString = "";
 		
 		 try {
 	            RestTemplate restTemplate = new RestTemplate();
@@ -79,7 +81,11 @@ public class WebController {
 	            String url = "http://ec2-3-35-208-154.ap-northeast-2.compute.amazonaws.com:8082";
 	      
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
-	            jsonInString = restTemplate.getForObject(url + "/kinds/k5/restaurants", String.class);
+	            jsonInString = restTemplate.getForObject(url + "/kinds/k5", String.class);
+	           
+	            jsonInString1 = restTemplate.getForObject(url + "/kinds/k5/restaurants", String.class);
+	            
+	            resultString = jsonInString.concat(jsonInString1);
 	 
 	        } catch (HttpClientErrorException | HttpServerErrorException e) {
 	            result.put("statusCode", e.getRawStatusCode());
@@ -93,13 +99,15 @@ public class WebController {
 	            System.out.println(e.toString());
 	        }
 	 
-	        return jsonInString;
+	        return resultString;
 	}
 	@GetMapping("/kinds/k3/restaurants") 
 	public String kindlistk3() {
 		
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		String jsonInString = "";
+		String jsonInString1 = "";
+		String resultString = "";
 		
 		 try {
 	            RestTemplate restTemplate = new RestTemplate();
@@ -110,7 +118,11 @@ public class WebController {
 	            String url = "http://ec2-3-35-208-154.ap-northeast-2.compute.amazonaws.com:8082";
 	      
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
-	            jsonInString = restTemplate.getForObject(url + "/kinds/k3/restaurants", String.class);
+	            jsonInString = restTemplate.getForObject(url + "/kinds/k3", String.class);
+		           
+	            jsonInString1 = restTemplate.getForObject(url + "/kinds/k3/restaurants", String.class);
+	            
+	            resultString = jsonInString.concat(jsonInString1);
 	 
 	        } catch (HttpClientErrorException | HttpServerErrorException e) {
 	            result.put("statusCode", e.getRawStatusCode());
@@ -131,6 +143,8 @@ public class WebController {
 		
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		String jsonInString = "";
+		String jsonInString1 = "";
+		String resultString = "";
 		
 		 try {
 	            RestTemplate restTemplate = new RestTemplate();
@@ -141,7 +155,11 @@ public class WebController {
 	            String url = "http://ec2-3-35-208-154.ap-northeast-2.compute.amazonaws.com:8082";
 	      
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
-	            jsonInString = restTemplate.getForObject(url + "/kinds/k6/restaurants", String.class);
+	            jsonInString = restTemplate.getForObject(url + "/kinds/k6", String.class);
+	            
+	            jsonInString1 = restTemplate.getForObject(url + "/kinds/k6/restaurants", String.class);
+	            
+	            resultString = jsonInString.concat(jsonInString1);
 	 
 	        } catch (HttpClientErrorException | HttpServerErrorException e) {
 	            result.put("statusCode", e.getRawStatusCode());
