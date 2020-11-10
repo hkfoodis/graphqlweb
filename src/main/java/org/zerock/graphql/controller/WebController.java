@@ -44,7 +44,7 @@ public class WebController {
 	            HttpHeaders header = new HttpHeaders();
 	            HttpEntity<?> entity = new HttpEntity<>(header);
 	 
-	            String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
+	            String url = "http://ec2-3-35-208-154.ap-northeast-2.compute.amazonaws.com:8082";
 	      
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
 	            jsonInString = restTemplate.getForObject(url + "/restaurant/1k5A/menus", String.class);
@@ -76,7 +76,7 @@ public class WebController {
 	            HttpHeaders header = new HttpHeaders();
 	            HttpEntity<?> entity = new HttpEntity<>(header);
 	 
-	            String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
+	            String url = "http://ec2-3-35-208-154.ap-northeast-2.compute.amazonaws.com:8082";
 	      
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
 	            jsonInString = restTemplate.getForObject(url + "/kinds/k5/restaurants", String.class);
@@ -107,7 +107,7 @@ public class WebController {
 	            HttpHeaders header = new HttpHeaders();
 	            HttpEntity<?> entity = new HttpEntity<>(header);
 	 
-	            String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
+	            String url = "http://ec2-3-35-208-154.ap-northeast-2.compute.amazonaws.com:8082";
 	      
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
 	            jsonInString = restTemplate.getForObject(url + "/kinds/k3/restaurants", String.class);
@@ -138,7 +138,7 @@ public class WebController {
 	            HttpHeaders header = new HttpHeaders();
 	            HttpEntity<?> entity = new HttpEntity<>(header);
 	 
-	            String url = "http://ec2-3-34-50-187.ap-northeast-2.compute.amazonaws.com:4000";
+	            String url = "http://ec2-3-35-208-154.ap-northeast-2.compute.amazonaws.com:8082";
 	      
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
 	            jsonInString = restTemplate.getForObject(url + "/kinds/k6/restaurants", String.class);
