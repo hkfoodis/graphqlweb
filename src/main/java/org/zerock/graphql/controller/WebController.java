@@ -120,7 +120,7 @@ public class WebController {
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
 	            jsonInString = restTemplate.getForObject(url + "/kinds/k3", String.class);
 		           
-	            jsonInString1 = restTemplate.getForObject(url + "/restaurants/k5", String.class);
+	            jsonInString1 = restTemplate.getForObject(url + "/restaurants/k3", String.class);
 	            
 	            resultString = jsonInString.concat(jsonInString1);
 	 
@@ -157,7 +157,7 @@ public class WebController {
 	            //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
 	            jsonInString = restTemplate.getForObject(url + "/kinds/k6", String.class);
 	            
-	            jsonInString1 = restTemplate.getForObject(url + "/restaurants/k5", String.class);
+	            jsonInString1 = restTemplate.getForObject(url + "/restaurants/k6", String.class);
 	            
 	            resultString = jsonInString.concat(jsonInString1);
 	 
